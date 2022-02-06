@@ -83,30 +83,35 @@ async function main() {
   // 透過 Remix 發布(Deploy)到區塊鏈上後的 合約地址
   const contractAddress = '0x7e09C5fBC8828635eFD3C03ded05C29bAc645B68'
 
-  // const contract = new web3.eth.Contract(abi, contractAddress);
-  // console.log("Smart contract functions: ", contract.methods);
-
-  // await keypress();
+  const contract = new web3.eth.Contract(abi, contractAddress);
+  // 查看 contract 裡的 methods，會根據傳入的 ABI 結構而顯示對應的 function
+  console.log("Smart contract functions: ", contract.methods);
+  await keypress();
 
   // // Task 4: Interact with the smart contract
   // // Set the contract value to 700
 
-  // const initialValue = await contract.methods.retrieve().call();
-  // console.log("\nInitial value:", initialValue);
+  const initialValue = await contract.methods.retrieve().call();
+  // 因為尚位賦值給合約裡的變數(number) 所以一開始抓到的會是 0
+  console.log("\nInitial value:", initialValue);
+  await keypress();
 
-  // const newValue = 700;
-  // console.log(`Setting the value to ${newValue}...`);
-  // const txReceipt = await contract.methods
-  //   .store(newValue)
-  //   .send({ from: accounts[0] });
 
-  // const updatedValue = await contract.methods.retrieve().call();
-  // console.log("Value afterwards:", updatedValue);
+  const newValue = 700;
+  console.log(`Setting the value to ${newValue}...`);
+  const txReceipt = await contract.methods
+    .store(newValue) // 呼叫智能合約裡的 store 函式，並且將 700 賦值到智能合約裡的變數(number)  
+    .send({ from: accounts[0] }); // 執行合約
+
+  console.log('呼叫完 sand 後錢包餘額：',web3.utils.fromWei( await web3.eth.getBalance(accounts[0]), 'ether'))
+  const updatedValue = await contract.methods.retrieve().call();
+  // 再次查看 合約裡變數(number) 現在的值
+  console.log("Value afterwards:", updatedValue);
 
   // await keypress();
 
-  // // View receipt of the transaction we just sent
-  // console.log("\nTransaction receipt:", txReceipt);
+  // View receipt of the transaction we just sent
+  console.log("\nTransaction receipt:", txReceipt);
 }
 
 main()
