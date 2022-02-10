@@ -379,7 +379,7 @@ console.log("Value afterwards:", updatedValue);
 ## 結論
 這次跟著講者的程式碼實際的一步一步實作一遍，過程中也順便補足一些基本知識，整體大概只能說是順過了整個流程，從智能合約的部署產生 ABI、Bytecode 到領取測試幣並透過 Web3.js 操作整個智能合約，雖然只是一個簡單的例子，但對智能合約的部分還是有了更深一點的理解。
 
-本次的範例是一開始就將錢包地址寫死，並且直接綁定到 Account 中，之後打算研究讓使用者連接自己的 MetaMask 再來做操作，接下來也會花一些時間去了解 Solidity 的部分，預計到時會再整理個 Solidity 語法的筆記，到時還請各位大大們指教了。
+本次的範例是一開始就將錢包地址寫死，並且直接綁定到 Account 中，如果想要透過點擊按鈕來讓使用者連接自己的 MetaMask 的話可以[參考此文章](https://medium.com/valist/how-to-connect-web3-js-to-metamask-in-2020-fee2b2edf58a)，接下來也會花一些時間去了解 Solidity 的部分，預計到時會再整理個 Solidity 語法的筆記，到時還請各位大大們指教了。
 
 #### 以上就是這次實作的結論，如果有新的見解或新的發現會再繼續更新這篇文章，如果有任何講錯的地方或冒犯的部分也歡迎大家提出來告訴我一聲。
 
@@ -396,3 +396,4 @@ console.log("Value afterwards:", updatedValue);
 5. [Day29|現實中的區塊鏈(6)：基礎智能合約語法 - lkm543](https://ithelp.ithome.com.tw/articles/10216370)
 6. [ethereum-開發筆記-21ethereum-開發整體脈絡 - Fukuball](https://blog.fukuball.com/ethereum-%E9%96%8B%E7%99%BC%E7%AD%86%E8%A8%98-21ethereum-%E9%96%8B%E7%99%BC%E6%95%B4%E9%AB%94%E8%84%88%E7%B5%A1/)
 7. [The Ethereum Virtual Machine — How does it work? - Luit Hollander](https://medium.com/mycrypto/the-ethereum-virtual-machine-how-does-it-work-9abac2b7c9e)
+8. [How to Connect Web3.js to MetaMask in 2022 - Alec M. Wantoch](https://medium.com/valist/how-to-connect-web3-js-to-metamask-in-2020-fee2b2edf58a)
