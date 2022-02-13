@@ -20,29 +20,29 @@ interface IBaseContract {
 
 contract ContractUseDeployedBase {
   
-    IBaseContract contractA ;
+    IBaseContract baseContract ;
     constructor(address _address) {
-        contractA =  IBaseContract(_address);
+        baseContract =  IBaseContract(_address);
     }
 
  
-    function getTestAContractOwner() public view returns (address){
-        return contractA.getContractOwner();
+    function getBCContractOwner() public view returns (address){
+        return baseContract.getContractOwner();
     }
-     function getTestAOwner() public view returns (address){
-        return contractA.getOwner();
+     function getBCOwner() public view returns (address){
+        return baseContract.getOwner();
     }
-    function getTestAConstructorNum() public view returns (uint256){
-        return contractA.getConstructorNum();
+    function getBCConstructorNum() public view returns (uint256){
+        return baseContract.getConstructorNum();
     }
-    function getTestANum() public view returns (uint256){
-        return contractA.getNum();
+    function getBCNum() public view returns (uint256){
+        return baseContract.getNum();
     }
-    function getTestAMsgSender() public view returns (address){
-        return contractA.getMsgSender();
+    function getBCMsgSender() public view returns (address){
+        return baseContract.getMsgSender();
     }
-     function getTestATxOrigin() public view returns (address){
-        return contractA.getTxOrigin();
+     function getBCTxOrigin() public view returns (address){
+        return baseContract.getTxOrigin();
     }
     function getMsgSender() public view returns (address){
         return msg.sender;
